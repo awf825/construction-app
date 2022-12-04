@@ -81,12 +81,12 @@ test:
 #
 
 # HEROKU
-# production:
-#   <<: *default
-#   database: movie_api_production
-#   username: movie_api
-#   password: <%= ENV["MOVIE_API_DATABASE_PASSWORD"] %>
+production:
+  <<: *default
+  database: movie_api_production
+  username: movie_api
+  password: <%= ENV["MOVIE_API_DATABASE_PASSWORD"] %>
 
 # EB
-production:
-  url: <%= ENV["DATABASE_URL"] %>
+# production:
+#   url: <%= ENV["DATABASE_URL"] %>
