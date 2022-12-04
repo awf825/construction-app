@@ -15,6 +15,8 @@ gem "puma", "~> 5.0"
 
 gem 'rack-cors'
 
+gem "puma_worker_killer"
+
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "jbuilder"
 
