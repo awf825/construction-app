@@ -1,4 +1,4 @@
-class Api::MoviesController < ApplicationController
+class Api::V1::MoviesController < ApplicationController
     # GET /movies
     def show
         @movies = Movie.all
