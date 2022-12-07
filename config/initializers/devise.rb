@@ -312,7 +312,7 @@ Devise.setup do |config|
   # the token should be revoked
   config.jwt do |jwt|
 
-    jwt.secret = Rails.application.credentials[:devise_jwt_secret_key]
+    jwt.secret = Rails.application.credentials.devise_jwt_secret_key!
     # jwt.secret = 'abcd'
     jwt.dispatch_requests = [
       ['POST', %r{^/login$}]
