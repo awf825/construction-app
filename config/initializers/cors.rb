@@ -14,6 +14,11 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
       :methods => [:post],
       expose: [:Authorization]
 
+    resource '/logout',
+      :headers => :any,
+      :methods => [:delete],
+      expose: [:Authorization]
+
     resource "*",
       headers: :any,
       methods: %i[:get, :post, :put, :patch, :delete, :options, :head],
