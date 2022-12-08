@@ -9,6 +9,11 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
     origins "*"
 
+    resource '/login',
+      :headers => :any,
+      :methods => [:post],
+      expose: [:Authorization]
+
     resource "*",
       headers: :any,
       methods: %i[:get, :post, :put, :patch, :delete, :options, :head],
