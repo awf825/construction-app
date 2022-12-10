@@ -12,6 +12,11 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do 
       resource :movies
+      resources :procurables
+      get :index_by_phase_id, to: 'procurables#index_by_phase_id'
+      resources :phases
+      get :index_by_project_id, to: 'phases#index_by_project_id'
+      resources :projects
     end
   end
 end
