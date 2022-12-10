@@ -7,7 +7,7 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins "*"
+    origins "localhost:3000, https://construction-app-client.herokuapp.com/"
 
     resource '/login',
       :headers => :any,
@@ -20,8 +20,8 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
       expose: [:Authorization]
 
     resource "*",
-      headers: :any,
-      methods: %i[:get, :post, :put, :patch, :delete, :options, :head],
+      :headers => :any,
+      :methods => [:get, :post, :put, :patch, :delete, :options, :head],
       expose: [:Authorization]
   end
 end

@@ -311,7 +311,6 @@ Devise.setup do |config|
   # as "Bearer + token" when theres a successful response sent back, and on a logout DELETE request,
   # the token should be revoked
   config.jwt do |jwt|
-
     jwt.secret = Rails.application.credentials.devise_jwt_secret_key!
     # jwt.secret = 'abcd'
     jwt.dispatch_requests = [
