@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  belongs_to :account
   include Devise::JWT::RevocationStrategies::JTIMatcher
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
