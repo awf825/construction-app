@@ -2,8 +2,7 @@ class Api::V1::ProcurablesController < ApplicationController
   before_action :set_procurable, only: %i[ show update destroy ]
 
   def index_by_phase_id
-    @phases = Procurable.all.where(phase_id: params[:phase_id])
-
+    @phases = Procurable.where(phase_id: params[:phase_id]).ids
     render json: @phases
   end
 

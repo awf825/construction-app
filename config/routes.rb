@@ -17,7 +17,7 @@ Rails.application.routes.draw do
       resources :procurables
       get :index_by_phase_id, to: 'procurables#index_by_phase_id'
       resources :phases
-      get :index_by_project_id, to: 'phases#index_by_project_id'
+      get :index_procurables_phases_by_project_id, to: 'phases#index_procurables_phases_by_project_id'
       resources :projects
     end
   end

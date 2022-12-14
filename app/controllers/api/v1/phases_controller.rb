@@ -1,10 +1,13 @@
 class Api::V1::PhasesController < ApplicationController
   before_action :set_phase, only: %i[ show update destroy ]
 
-  def index_by_project_id
-    @phases = Phase.all.where(project_id: params[:project_id])
-
-    render json: @phases
+  # /phases/:project_id
+  def index_procurables_phases_by_project_id
+    @phase_ids = Phase.all.where(project_id: params[:project_id]).ids
+    # @procurables_by_phase_id = Procurable.grouped_by_phase_id(@phases)
+    @grouped_procurables = Procurable.grouped_by_phase_id(@phase_ids)
+    # binding.pry
+    render json: @grouped_procurables
   end
 
   # GET /phases
