@@ -3,8 +3,17 @@ class Api::V1::PhasesController < ApplicationController
 
   # /phases/:project_id
   def index_procurables_phases_by_project_id
+    division_map = Division.all.where(account_id: 1).pluck(:id, :division_name).to_h
     @phase_ids = Phase.all.where(project_id: params[:project_id]).ids
+
     @grouped_procurables = Procurable.grouped_by_phase_id(@phase_ids)
+    # this groups the data by division id (not name)
+    binding.pry
+    @grouped_procurables.transform_values! { 
+      |v|
+      v.group_by{ |o| o.division_id } 
+    }
+
     render json: @grouped_procurables
   end
 
