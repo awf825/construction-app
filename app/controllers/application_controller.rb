@@ -6,8 +6,8 @@ class ApplicationController < ActionController::API
     # Will have to do attribute projects, users, etcs to account_ids
 
     protected 
+    # sign_up = /registration... hmph
     def configure_permitted_parameters
-        devise_parameter_sanitizer.permit(:sign_up, keys: %i[name avatar email])
-        devise_parameter_sanitizer.permit(:account_update, keys: %i[name avatar email])
+        devise_parameter_sanitizer.permit(:sign_up, keys: %i[account_id name])
     end
 end

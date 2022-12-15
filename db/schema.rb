@@ -44,7 +44,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_11_234107) do
   end
 
   create_table "procurables", force: :cascade do |t|
-    t.string "name"
+    t.string "procurable_name"
+    t.integer "submittal_number"
+    t.datetime "submittal_date"
+    t.integer "architect_review_period"
+    t.datetime "submittal_return_date"
+    t.datetime "field_measure_date"
+    t.string "field_measure_activity"
+    t.integer "lead_time"
+    t.datetime "date_available"
+    t.string "activity_needed_for"
+    t.datetime "date_needed"
     t.string "subcontractor"
     t.integer "phase_id"
     t.datetime "created_at", null: false

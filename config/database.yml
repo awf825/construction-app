@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: movie_api_development
+  database: construction_app_api_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -83,8 +83,8 @@ test:
 # HEROKU
 production:
   <<: *default
-  database: movie_api_production
-  username: movie_api
+  database: construction_app_api_production
+  username: construction_app_api_user
   password: <%= ENV["MOVIE_API_DATABASE_PASSWORD"] %>
 
 # EB
